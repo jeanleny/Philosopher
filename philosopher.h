@@ -15,8 +15,13 @@ typedef struct s_data
 	int	eat_t;
 	int	die_t;
 	int	sle_t;
+	int	meals;
+	long			time;
 	pthread_t		*philo;
-	pthread_mutex_t	mutex;
+	pthread_mutex_t	*mutex;
 } t_data;
+
+int	parsing(t_data *data, int argc, char **argv);
+int		ft_atoi(const char *ntpr);
 
 #endif
