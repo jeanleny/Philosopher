@@ -1,4 +1,4 @@
-HEADER = libft/libft.h
+HEADER = philosopher.h
 
 OBJDIR = obj_files
 
@@ -31,11 +31,11 @@ $(NAME) :	$(OBJ_FUNC) $(OBJ) $(OBJ_PARSING)
 
 $(OBJDIR)/%.o: $(CDIR)%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 $(OBJDIR)/%.o: $(C_PARSING_DIR)%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
 
 clean : 
 	@$(RM) $(OBJ) $(OBJDIR)
